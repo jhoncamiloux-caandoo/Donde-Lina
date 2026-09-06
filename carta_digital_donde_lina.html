@@ -667,26 +667,19 @@
     .extra-add svg,
     .family-add svg { width: 14px; height: 14px; }
     .feature .add-to-cart { color: var(--dark); background: var(--orange); }
-    .family-prices .family-add {
+    .family-add {
       padding: 7px 10px;
       color: #fff;
       background: var(--red);
     }
-    .card.feature.family-card > .family-order-options {
-      position: static !important;
-      width: auto !important;
-      height: auto !important;
-      margin: 0 !important;
-      padding: 14px !important;
+    .family-order-options {
+      padding: 14px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 8px;
-      overflow: visible !important;
-      clip: auto !important;
-      white-space: normal !important;
       background: #fff;
-      border-top: 1px solid var(--line) !important;
+      border-top: 1px solid var(--line);
     }
     .family-order-options > span { width: 100%; color: var(--ink); font-size: 12px; font-weight: 900; }
     .extra { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
@@ -1211,7 +1204,15 @@
 
       <div class="section-head" style="margin-top:32px"><div class="section-title-wrap"><div class="section-icon">👨‍👩‍👧‍👦</div><div><h2>Salchipapas familiar</h2><div class="sub">3 o más personas</div></div></div></div>
       <article class="card feature family-card">
-        <div class="family-art"><img src="assets/menu/salchifamiliar-card-white.png" alt="Salchifamiliar con papa francesa, salchicha, pollo, carne, tocineta, costilla, ripio, lechuga, queso y salsas. Precios: $40.000, $50.000 y $80.000" loading="lazy" decoding="async"></div>
+        <div class="family-art">
+          <img src="assets/menu/salchifamiliar-card-white.png" alt="Salchifamiliar con papa francesa, salchicha, pollo, carne, tocineta, costilla, ripio, lechuga, queso y salsas. Precios: $40.000, $50.000 y $80.000" loading="lazy" decoding="async">
+          <div class="family-order-options">
+            <span>Elige el tamaño para agregar:</span>
+            <button class="pill family-add" type="button" data-family-price="40000" aria-label="Agregar Salchifamiliar de $40.000 al pedido"><i data-lucide="plus"></i>$40.000</button>
+            <button class="pill family-add" type="button" data-family-price="50000" aria-label="Agregar Salchifamiliar de $50.000 al pedido"><i data-lucide="plus"></i>$50.000</button>
+            <button class="pill family-add" type="button" data-family-price="80000" aria-label="Agregar Salchifamiliar de $80.000 al pedido"><i data-lucide="plus"></i>$80.000</button>
+          </div>
+        </div>
         <div class="mini">🍟</div>
         <div>
           <h3>Salchifamiliar</h3>
@@ -1458,23 +1459,10 @@
         priceNode.querySelector('.add-to-cart').addEventListener('click', () => addItem(itemName, price));
       });
 
-      const familyCard = document.querySelector('.family-card');
-      if (familyCard) {
-        const familyOptions = document.createElement('div');
-        familyOptions.className = 'family-order-options';
-        familyOptions.innerHTML = '<span>Elige el tamaño para agregar:</span>';
-        familyCard.querySelectorAll('.family-prices .pill').forEach((pill) => {
-          const price = parsePrice(pill.textContent);
-          const button = document.createElement('button');
-          button.className = 'pill family-add';
-          button.type = 'button';
-          button.setAttribute('aria-label', `Agregar Salchifamiliar de ${formatPrice(price)} al pedido`);
-          button.innerHTML = `<i data-lucide="plus"></i>${formatPrice(price)}`;
-          button.addEventListener('click', () => addItem(`Salchifamiliar · opción ${formatPrice(price)}`, price));
-          familyOptions.appendChild(button);
-        });
-        familyCard.appendChild(familyOptions);
-      }
+      document.querySelectorAll('[data-family-price]').forEach((button) => {
+        const price = Number(button.dataset.familyPrice);
+        button.addEventListener('click', () => addItem(`Salchifamiliar · opción ${formatPrice(price)}`, price));
+      });
 
       document.querySelectorAll('.extra').forEach((extra) => {
         const title = extra.querySelector('span')?.textContent.trim();
