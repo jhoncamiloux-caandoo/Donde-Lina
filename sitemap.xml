@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://donde-lina.vercel.app/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://donde-lina.vercel.app/assets/site/picada-completa.jpg</image:loc>
+      <image:title>Gran Picada Monumental Donde Lina · Carne Llanera al Carbón</image:title>
+      <image:caption>Picada de carnes a la brasa en Donde Lina · Centro Comercial MR Auleth Local C 9</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://donde-lina.vercel.app/assets/site/hamburguesa-artesanal.jpg</image:loc>
+      <image:title>Hamburguesa Artesanal al Carbón Donde Lina</image:title>
+      <image:caption>Hamburguesa al carbón con queso cheddar fundido, tocineta y ripio en Donde Lina</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://donde-lina.vercel.app/assets/site/carne-llanera.jpg</image:loc>
+      <image:title>Carne a la Llanera por Gramos Donde Lina</image:title>
+      <image:caption>Auténtica carne a la llanera asada a la leña y al carbón en C.C. MR Auleth Local C 9</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://donde-lina.vercel.app/assets/site/costilla-ahumada.jpg</image:loc>
+      <image:title>Costilla Ahumada a la Leña Donde Lina</image:title>
+      <image:caption>Costilla de cerdo ahumada lentamente con papas a la francesa y chimichurri</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://donde-lina.vercel.app/assets/site/perro-especial-queso.jpg</image:loc>
+      <image:title>Perro Caliente con Sábana de Queso Fundido Donde Lina</image:title>
+      <image:caption>Perro caliente gratinado en Donde Lina · C.C. MR Auleth Local C 9</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://donde-lina.vercel.app/assets/site/salchipapa-especial.jpg</image:loc>
+      <image:title>Salchipapa Mixta y Familiar Donde Lina</image:title>
+      <image:caption>Salchipapa con carne a la llanera, pollo, tocineta, queso y ripio en Donde Lina</image:caption>
+    </image:image>
+  </url>
+</urlset>

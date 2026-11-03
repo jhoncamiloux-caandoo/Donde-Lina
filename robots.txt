@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://donde-lina.vercel.app/sitemap.xml
